@@ -1,3 +1,4 @@
-class AmusementPark <ActiveRecord::Base
+
+class AmusementPark < ApplicationRecord
   has_many :rides
 end
