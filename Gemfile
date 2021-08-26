@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.1'
   gem 'simplecov'
   gem 'orderly'
+  gem 'launchy'
 end
 
 group :development do

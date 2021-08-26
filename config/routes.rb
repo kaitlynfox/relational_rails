@@ -6,8 +6,16 @@ Rails.application.routes.draw do
 
   # AmusementPark
   get '/amusement_parks', to: 'amusement_parks#index'
+  get '/amusement_park/:id', to: 'amusement_parks#show'
+
   # Ride
+  get '/rides', to: 'rides#index'
+
   # Zoo
-    get '/zoos', to: 'zoos#index'
+  get '/zoos', to: 'zoos#index'
+  get '/zoos/:id', to: 'zoos#show'
+
   # Volunteer
+  get '/volunteers', to: 'volunteers#index'
+
 end
