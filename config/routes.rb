@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   # Ride
   get '/rides', to: 'rides#index'
+  get '/rides/:id', to: 'rides#show'
 
   # Zoo
   get '/zoos', to: 'zoos#index'
