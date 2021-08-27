@@ -1,0 +1,11 @@
+<%= link_to "Zoos", '/zoos' %>
+<%= link_to "Volunteers", '/volunteers' %>
+
+<h1><%= @zoo.name %></h1>
+
+<h2>Volunteers</h2>
+<% @zoo.volunteers.each do |volunteer| %>
+  <h3>Name: <%= volunteer.name %></h3>
+  <p>Certifed Trainer? <%= volunteer.certified_trainer %></p>
+  <p>Years of Experience: <%= volunteer.years_of_experience %></p>
+<% end %>
