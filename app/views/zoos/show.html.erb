@@ -1,5 +1,9 @@
+<%= link_to 'Zoos', '/zoos' %>
+<%= link_to 'Volunteers', '/volunteers' %>
+
 <h1><%= @zoo.name %></h1>
 
 <h3>City: <%= @zoo.city %></h3>
 <h3>Rank: <%= @zoo.rank %></h3>
 <h3>Receives State Funding: <%= @zoo.state_funding %></h3>
+<h3>Number of Volunteers: <%= @zoo.volunteers.count %></h3>
