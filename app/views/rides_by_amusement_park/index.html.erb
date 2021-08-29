@@ -1,9 +1,9 @@
 <%= link_to "Rides", '/rides' %>
 <%= link_to "Amusement Parks", '/amusement_parks' %>
 
-<h1>All Rides</h1>
+<h1><%= @amusement_park.name %></h1>
 
-<% @rides.each do |ride|%>
+<% @rides_by_amusement_park.each do |ride|%>
   <h3><%= ride.name %></h3>
   <h4>Is it a roller coaster? <%= ride.roller_coaster %></h4>
   <h4>Top Speed: <%= ride.top_speed %>MPH</h4>

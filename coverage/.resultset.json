@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/kaitlynfox/Dev/relational_rails/config/environment.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/application.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/application.rb": {
         "lines": [
           1,
           null,
@@ -47,7 +47,7 @@
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/boot.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -55,7 +55,7 @@
           1
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/environments/test.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -105,7 +105,7 @@
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/initializers/application_controller_renderer.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -117,7 +117,7 @@
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/initializers/assets.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -135,7 +135,7 @@
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/initializers/backtrace_silencers.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -146,7 +146,7 @@
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/initializers/content_security_policy.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -175,7 +175,7 @@
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/initializers/cookies_serializer.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -184,7 +184,7 @@
           1
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/initializers/filter_parameter_logging.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -192,7 +192,7 @@
           1
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/initializers/inflections.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -212,7 +212,7 @@
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/initializers/mime_types.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -220,7 +220,7 @@
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/initializers/wrap_parameters.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -238,7 +238,7 @@
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/config/routes.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/config/routes.rb": {
         "lines": [
           1,
           null,
@@ -251,6 +251,10 @@
           1,
           null,
           null,
+          1,
+          null,
+          null,
+          1,
           1,
           null,
           null,
@@ -263,36 +267,46 @@
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/app/helpers/application_helper.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/app/models/zoo.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/models/amusement_park.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/app/models/application_record.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/models/ride.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/app/models/volunteer.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/controllers/amusement_parks_controller.rb": {
         "lines": [
           1,
+          null,
           1,
-          null
-        ]
-      },
-      "/Users/kaitlynfox/Dev/relational_rails/app/controllers/volunteers_controller.rb": {
-        "lines": [
-          1,
+          0,
+          null,
           null,
           1,
           1,
@@ -300,13 +314,28 @@
           null
         ]
       },
-      "/Users/kaitlynfox/Dev/relational_rails/app/controllers/application_controller.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/controllers/rides_by_amusement_park_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1629934988
+    "timestamp": 1630248195
   }
 }

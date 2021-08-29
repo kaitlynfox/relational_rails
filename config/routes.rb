@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   get '/amusement_parks', to: 'amusement_parks#index'
   get '/amusement_parks/:id', to: 'amusement_parks#show'
 
+  # Rides by Amusement Park
+  get '/amusement_parks/:id/rides', to: 'rides_by_amusement_park#index'
+
   # Ride
   get '/rides', to: 'rides#index'
+  get '/rides/:id', to: 'rides#show'
 
   # Zoo
   get '/zoos', to: 'zoos#index'
@@ -21,5 +25,5 @@ Rails.application.routes.draw do
   # Volunteer
   get '/volunteers', to: 'volunteers#index'
   get '/volunteers/:id', to: 'volunteers#show'
-  
+
 end
