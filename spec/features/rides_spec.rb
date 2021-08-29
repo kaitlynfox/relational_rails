@@ -9,6 +9,9 @@ RSpec.describe 'Rides' do
 
     ride = amusement_park.rides.create!(name: "The Beast",
                                         roller_coaster: true,
+                                        top_speed: 55,)
+    ride_2 = amusement_park.rides.create!(name: "Diamond Back",
+                                        roller_coaster: true,
                                         top_speed: 100,)
 
     visit "/rides"
@@ -28,7 +31,10 @@ RSpec.describe 'Rides' do
 
     ride = amusement_park.rides.create!(name: "The Beast",
                                         roller_coaster: true,
-                                        top_speed: 100,)
+                                        top_speed: 55,)
+    ride_2 = amusement_park.rides.create!(name: "Diamond Back",
+                                        roller_coaster: true,
+                                        top_speed: 100,)                    
 
     visit "/rides/#{ride.id}"
 

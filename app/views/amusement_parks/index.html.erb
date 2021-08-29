@@ -1,5 +1,7 @@
+<%= link_to "Rides", '/rides' %>
 <h1>All Amusement Parks</h1>
 
 <% @amusement_parks.each do |amusement_park|%>
-  <h3><%= amusement_park.name %></h3>
+  <h3><%= amusement_park.name %>
+  <%= amusement_park.created_at %></h3>
 <% end %>

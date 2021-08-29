@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
   # AmusementPark
   get '/amusement_parks', to: 'amusement_parks#index'
-  get '/amusement_park/:id', to: 'amusement_parks#show'
+  get '/amusement_parks/:id', to: 'amusement_parks#show'
+
+  # Rides by Amusement Park
+  get '/amusement_parks/:id/rides', to: 'rides_by_amusement_park#index'
 
   # Ride
   get '/rides', to: 'rides#index'
