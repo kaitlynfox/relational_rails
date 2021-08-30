@@ -1,0 +1,11 @@
+<h2> Update amusement park </h2>
+
+<%= form_with url: "/amusement_parks/#{@amusement_park.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, placeholder: "#{@amusement_park.name}"%><br><br>
+  <%= form.label :cost_of_entry %>
+  <%= form.text_field :cost_of_entry, placeholder: "#{@amusement_park.cost_of_entry}" %><br><br>
+  <%= form.label :open_year_round, "Check box if the park is open year round:" %>
+  <%= form.check_box :open_year_round %><br><br>
+  <%= form.submit "Update Amusement Park" %>
+<% end %>

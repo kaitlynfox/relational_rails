@@ -1,0 +1,13 @@
+<h3> Make a new Amusement Park </h3>
+
+
+<%= form_with url: '/amusement_parks', method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br><br>
+  <%= form.label :cost_of_entry %>
+  <%= form.text_field :cost_of_entry %><br><br>
+  <%= form.label :open_year_round, "Open year round?" %>
+  <%= form.check_box :open_year_round %><br><br>
+
+  <%= form.submit "Create Amusement Park" %>
+<% end %>

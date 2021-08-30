@@ -63,6 +63,7 @@ RSpec.describe 'Rides' do
       # visit "/"
       # page.has_link?(true)
       # page.click_link("Rides")
+      
 
       visit "/amusement_parks"
       page.has_link?(true)

@@ -1,6 +1,7 @@
 <%= link_to "Rides", '/rides' %>
 <%= link_to "Amusement Parks", '/amusement_parks' %>
 <%= link_to "Rides by Amusement Park", "/amusement_parks/#{@amusement_park.id}/rides" %>
+<%= link_to "Edit Amusement Park", "/amusement_parks/#{@amusement_park.id}/edit" %>
 
 <h1><%= @amusement_park.name %></h1>
 
