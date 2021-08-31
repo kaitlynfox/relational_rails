@@ -1,7 +1,7 @@
 class ZoosController < ApplicationController
 
   def index
-    @zoos = Zoo.order(created_at: :desc)
+    @zoos = Zoo.ordered
   end
 
   def show
@@ -20,5 +20,19 @@ class ZoosController < ApplicationController
                        )
 
     redirect_to "/zoos"
+  end
+
+  def zoo_params
+    params.permit(:name, :rank, :state_funding, :city)
+  end
+
+  def edit
+    @zoo = Zoo.find(params[:id])
+  end
+
+  def update
+    zoo = Zoo.find(params[:id])
+    zoo.update(zoo_params)
+    redirect_to "/zoos/#{zoo.id}"
   end
 end
