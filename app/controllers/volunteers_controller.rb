@@ -24,4 +24,10 @@ class VolunteersController < ApplicationController
                   :years_of_experience)
   end
 
+  def destroy
+    volunteer = Volunteer.find(params[:id])
+    volunteer.destroy
+    redirect_to "/volunteers"
+  end
+
 end
