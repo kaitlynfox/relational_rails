@@ -1,5 +1,5 @@
 class Zoo < ApplicationRecord
-  has_many :volunteers
+  has_many :volunteers, dependent: :destroy
 
   def self.ordered
     order(created_at: :desc)
