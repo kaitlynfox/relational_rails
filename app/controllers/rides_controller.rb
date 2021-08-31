@@ -1,7 +1,7 @@
 class RidesController < ApplicationController
 
   def index
-    @rides = Ride.all
+    @rides = Ride.true_rides
   end
 
   def show

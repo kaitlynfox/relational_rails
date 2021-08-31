@@ -61,4 +61,10 @@ RSpec.describe 'index page' do
       expect(current_path).to eq("/rides/#{ride.id}/edit")
     end
   end
+
+  describe 'user story 15' do
+    it 'only shows the rides that are true (roller coasters)' do
+
+    end
+  end
 end

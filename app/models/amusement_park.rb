@@ -6,4 +6,11 @@ class AmusementPark < ApplicationRecord
     order(created_at: :DESC)
   end
 
+  def alpha_rides_by_park(alphabetize = false)
+    if alphabetize == true
+      rides.order(:name)
+    else
+      rides
+    end
+  end
 end

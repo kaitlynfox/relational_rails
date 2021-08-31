@@ -1,8 +1,10 @@
 class RidesByAmusementParkController < ApplicationController
 
   def index
+    # binding.pry
     @amusement_park = AmusementPark.find(params[:id])
-    @rides_by_amusement_park =  AmusementPark.find(params[:id]).rides
+    @rides_by_amusement_park =  @amusement_park.alpha_rides_by_park(params[:alphabetize])
+
   end
 
   def new

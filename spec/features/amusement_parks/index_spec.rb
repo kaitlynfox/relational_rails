@@ -19,10 +19,6 @@ RSpec.describe 'Index' do
   end
   describe 'user story 8' do
     it "should have link to Rides index" do
-      amusement_park = AmusementPark.create!(name: "Walt Disney World",
-                                             cost_of_entry: 95,
-                                             open_year_round: true,)
-
       visit "/amusement_parks"
       page.click_link("Rides")
       expect(current_path).to eq('/rides')

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe AmusementPark do
+describe AmusementPark do
   it {should have_many :rides}
 
   describe 'instance methods' do
@@ -10,10 +10,20 @@ RSpec.describe AmusementPark do
                                                cost_of_entry: 95,
                                                open_year_round: false,)
         amusement_park_2 = AmusementPark.create!(name: "King's Island", cost_of_entry: 45, open_year_round: false)
-  
-        expect("King's Island").to appear_before("Walt Disney World", only_text: true)
 
+        expect(AmusementPark.ordered_parks).to eq([amusement_park_2, amusement_park])
       end
+    end
+    describe '#alpha_rides_by_park' do
+      amusement_park_2 = AmusementPark.create!(name: "King's Island", cost_of_entry: 45, open_year_round: false)
+
+      ride = amusement_park_2.rides.create!(name: "The Beast",
+                                          roller_coaster: true,
+                                          top_speed: 55,)
+      ride_2 = amusement_park_2.rides.create!(name: "Diamond Back",
+                                          roller_coaster: true,
+                                          top_speed: 100,)
+      expect(AmusementPark.alpha_rides_by_park).to eq([ride_2, ride])
     end
   end
 

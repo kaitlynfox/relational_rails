@@ -291,6 +291,13 @@
           0,
           null,
           null,
+          1,
+          2,
+          0,
+          null,
+          2,
+          null,
+          null,
           null
         ]
       },
@@ -305,33 +312,36 @@
         "lines": [
           1,
           1,
+          null,
+          1,
+          0,
+          null,
           null
         ]
       },
-      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/controllers/rides_controller.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/controllers/rides_by_amusement_park_controller.rb": {
         "lines": [
           1,
+          null,
+          1,
+          null,
+          2,
+          2,
+          null,
+          null,
           null,
           1,
           0,
           null,
           null,
           1,
-          2,
+          0,
+          0,
+          0,
           null,
           null,
           1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
+          0,
           null,
           null
         ]
@@ -343,6 +353,6 @@
         ]
       }
     },
-    "timestamp": 1630381970
+    "timestamp": 1630389270
   }
 }

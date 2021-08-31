@@ -3,6 +3,7 @@
 <%= link_to "Add New Ride", "/amusement_parks/#{@amusement_park.id}/rides/new" %>
 
 <h1><%= @amusement_park.name %></h1>
+<%= link_to "Alphabetize Rides", "/amusement_parks/#{@amusement_park.id}/rides?alphabetize=true" %>
 
 <% @rides_by_amusement_park.each do |ride|%>
   <h3><%= ride.name %></h3>
