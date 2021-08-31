@@ -10,7 +10,6 @@ RSpec.describe 'AmusmentPark' do
 
     visit '/amusement_parks'
 
-    save_and_open_page
     expect("King's Island").to appear_before("Walt Disney World", only_text: true)
     expect(page).to have_content(amusement_park.name)
     expect(page).to have_content(amusement_park.created_at)
@@ -34,8 +33,6 @@ RSpec.describe 'AmusmentPark' do
                                         roller_coaster: false,
                                         top_speed: 15,)
     visit "/amusement_parks/#{amusement_park.id}"
-
-    save_and_open_page
 
     expect(page).to have_content(amusement_park.name)
     expect(page).to have_content(amusement_park.cost_of_entry)
