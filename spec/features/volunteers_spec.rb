@@ -93,4 +93,43 @@ RSpec.describe 'the volunteers index page' do
 
     expect(page).to have_content("Karen Dale")
   end
+
+  # User Story 18
+  it "can see all amusement park names and its attributes" do
+    zoo = Zoo.create!(name: "Denver City Zoo",
+                      rank: 3,
+                      state_funding: true,
+                      city: "Denver")
+
+    volunteer = Volunteer.create!(name: "Karen Dale",
+                                  certified_trainer: true,
+                                  years_of_experience: 4,
+                                  zoo_id: zoo.id)
+
+    visit "/volunteers"
+    page.has_link?("Update Volunteer")
+    click_link("Update Volunteer")
+
+    fill_in("name", with: "Karen Dale")
+    fill_in("certified_trainer", with: false)
+    fill_in("years_of_experience", with: 4)
+
+    expect(current_path).to eq("/volunteers/#{volunteer.id}/edit")
+  end
+
+  # User Story 20
+  it "can see all amusement park names and its attributes" do
+    zoo = Zoo.create!(name: "Denver City Zoo",
+                      rank: 3,
+                      state_funding: true,
+                      city: "Denver")
+
+    volunteer = Volunteer.create!(name: "Karen Dale",
+                                  certified_trainer: true,
+                                  years_of_experience: 4,
+                                  zoo_id: zoo.id)
+
+    visit "/volunteers/#{volunteer.id}"
+    page.has_button?("Delete Volunteer")
+  end
 end
