@@ -1,0 +1,15 @@
+<%= link_to "Rides", '/rides' %>
+<%= link_to "Amusement Parks", '/amusement_parks' %>
+<h2> Update Ride </h2>
+
+
+<%= form_with url: "/rides/#{@ride.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, placeholder: "#{@ride.name}" %><br><br>
+  <%= form.label :top_speed %>
+  <%= form.text_field :top_speed, placeholder: "#{@ride.top_speed}" %><br><br>
+  <%= form.label :roller_coaster, "Check box if the ride is a roller coaster:" %>
+  <%= form.check_box :roller_coaster %><br><br>
+
+  <%= form.submit "Update Ride" %>
+<% end %>

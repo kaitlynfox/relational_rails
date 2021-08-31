@@ -1,3 +1,5 @@
+<%= link_to "Rides", '/rides' %>
+<%= link_to "Amusement Parks", '/amusement_parks' %>
 <h2> Update amusement park </h2>
 
 <%= form_with url: "/amusement_parks/#{@amusement_park.id}", method: :patch, local: true do |form| %>
