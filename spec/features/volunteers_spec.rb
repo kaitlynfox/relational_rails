@@ -148,4 +148,25 @@ RSpec.describe 'the volunteers index page' do
     expect(page).to_not have_content("Denver City Zoo")
     expect(current_path).to eq("/zoos")
   end
+
+  # User Story 23
+  it "can delete a volunteer from the volunteer or zoo/volunteers page" do
+    zoo = Zoo.create!(name: "Denver City Zoo",
+                      rank: 3,
+                      state_funding: true,
+                      city: "Denver")
+                      
+    volunteer = Volunteer.create!(name: "Karen Dale",
+                                  certified_trainer: true,
+                                  years_of_experience: 4,
+                                  zoo_id: zoo.id)
+
+    visit "/volunteers"
+    expect(page).to have_content("Karen Dale")
+    page.has_button?("Delete Volunteer")
+    click_button("Delete Volunteer")
+
+    expect(page).not_to have_content("Karen Dale")
+    expect(current_path).to eq("/volunteers")
+  end
 end
