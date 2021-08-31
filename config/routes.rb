@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/rides/:id', to: 'rides#show'
   get '/rides/:id/edit', to: 'rides#edit'
   patch '/rides/:id', to: 'rides#update'
+  delete '/rides/:id', to: 'rides#destroy'
 
   # Zoo
   get '/zoos', to: 'zoos#index'

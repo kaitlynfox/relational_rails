@@ -18,6 +18,11 @@ class RidesController < ApplicationController
     redirect_to "/rides/#{ride.id}"
   end
 
+  def destroy
+    Ride.destroy(params[:id])
+    redirect_to '/rides'
+  end
+
   def ride_params
     params.permit(:name, :top_speed, :roller_coaster)
   end

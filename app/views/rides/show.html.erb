@@ -1,8 +1,9 @@
 <%= link_to "Rides", '/rides' %>
 <%= link_to "Amusement Parks", '/amusement_parks' %>
-<%= link_to "Edit Ride", "/rides/#{@ride.id}/edit" %>
+
 
 <h1><%= @ride.name %></h1>
-
+<%= link_to "Edit Ride", "/rides/#{@ride.id}/edit" %>
+<%= link_to "Delete Ride", "/rides/#{@ride.id}", method: :delete %>
 <h3>Top speed: <%= @ride.top_speed %>mph</h3>
 <h3>Is it a roller coaster? <%= @ride.roller_coaster %></h3>
