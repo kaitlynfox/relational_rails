@@ -35,4 +35,10 @@ class ZoosController < ApplicationController
     zoo.update(zoo_params)
     redirect_to "/zoos/#{zoo.id}"
   end
+
+  def destroy
+    zoo = Zoo.find(params[:id])
+    zoo.destroy
+    redirect_to "/zoos"
+  end
 end
