@@ -95,7 +95,7 @@ RSpec.describe 'the volunteers index page' do
   end
 
   # User Story 18
-  it "can see all amusement park names and its attributes" do
+  it "can edit a volunteer's info" do
     zoo = Zoo.create!(name: "Denver City Zoo",
                       rank: 3,
                       state_funding: true,
@@ -118,7 +118,7 @@ RSpec.describe 'the volunteers index page' do
   end
 
   # User Story 20
-  it "can see all amusement park names and its attributes" do
+  it "can delete a volunteer" do
     zoo = Zoo.create!(name: "Denver City Zoo",
                       rank: 3,
                       state_funding: true,
@@ -131,5 +131,21 @@ RSpec.describe 'the volunteers index page' do
 
     visit "/volunteers/#{volunteer.id}"
     page.has_button?("Delete Volunteer")
+  end
+
+  # User Story 22
+  it "can delete a zoo from the zoos main page" do
+    zoo = Zoo.create!(name: "Denver City Zoo",
+                      rank: 3,
+                      state_funding: true,
+                      city: "Denver")
+
+    visit "/zoos"
+    expect(page).to have_content("Denver City Zoo")
+    page.has_button?("Delete Zoo")
+    click_button("Delete Zoo")
+
+    expect(page).to_not have_content("Denver City Zoo")
+    expect(current_path).to eq("/zoos")
   end
 end
