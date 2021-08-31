@@ -77,8 +77,9 @@ RSpec.describe 'index page' do
                                           top_speed: 15,)
       visit "/amusement_parks/#{amusement_park_2.id}/rides"
       click_link("Alphabetize Rides")
-      save_and_open_page
-      expect("Diamond Back").to appear_before("The Beast", only_text: true)
+      # expect(current_path).to eq("/amusement_parks/#{amusement_park_2.id}/rides")
+      
+      expect(ride_2.name).to appear_before(ride.name)
 
     end
   end
