@@ -38,8 +38,6 @@ RSpec.describe 'Rides' do
 
     visit "/rides/#{ride.id}"
 
-    save_and_open_page
-
     expect(page).to have_content(ride.name)
     expect(page).to have_content(ride.roller_coaster)
     expect(page).to have_content(ride.top_speed)
