@@ -5,6 +5,7 @@
 
 <% @zoos.each do |zoo| %>
   <p>Zoo: <%= zoo.name %> - <%= zoo.created_at %> <%= link_to "Update Zoo", "/zoos/#{zoo.id}/edit" %>
+  <%= button_to "Delete Zoo", "/zoos/#{zoo.id}", method: :delete%>
 <% end %>
 
 <p><%= link_to "New Zoo", '/zoos/new' %></p>
