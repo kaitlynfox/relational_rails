@@ -5,3 +5,5 @@
 
 <h3>Certified Trainer? <%= @volunteer.certified_trainer %></h3>
 <h3>Years of Experience: <%= @volunteer.years_of_experience %></h3>
+
+<%= link_to "Update Volunteer", "/volunteers/#{@volunteer.id}/edit" %>

@@ -7,4 +7,6 @@
 <h3>Rank: <%= @zoo.rank %></h3>
 <h3>Receives State Funding: <%= @zoo.state_funding %></h3>
 <h3>Number of Volunteers: <%= @zoo.volunteers.count %></h3>
-<h3><%= link_to "See this zoo's volunteers here.", "/zoos/#{@zoo.id}/volunteers" %></h3>
+<h3><%= link_to "See this zoo's volunteers here.", "/zoos/#{@zoo.id}/volunteers" %></h3><br>
+
+<h3><%= link_to "Update Zoo", "/zoos/#{@zoo.id}/edit" %></h3><br>

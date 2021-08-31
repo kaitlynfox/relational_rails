@@ -4,7 +4,7 @@
 <h1>Zoos</h1>
 
 <% @zoos.each do |zoo| %>
-  <p>Zoo: <%= zoo.name %> - <%= zoo.created_at %>
+  <p>Zoo: <%= zoo.name %> - <%= zoo.created_at %> <%= link_to "Update Zoo", "/zoos/#{zoo.id}/edit" %>
 <% end %>
 
 <p><%= link_to "New Zoo", '/zoos/new' %></p>

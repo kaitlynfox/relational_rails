@@ -4,8 +4,12 @@
 <h1><%= @zoo.name %></h1>
 
 <h2>Volunteers</h2>
-<% @zoo.volunteers.each do |volunteer| %>
+<% @volunteers.each do |volunteer| %>
   <h3>Name: <%= volunteer.name %></h3>
   <p>Certifed Trainer? <%= volunteer.certified_trainer %></p>
   <p>Years of Experience: <%= volunteer.years_of_experience %></p>
 <% end %>
+
+<%= link_to "Create Volunteer", "/zoos/#{@zoo.id}/volunteers/new" %>
+
+<p><%= link_to "Sort Alphabetically", :sort => "name" %></p>
