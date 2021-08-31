@@ -56,39 +56,39 @@ RSpec.describe 'the zoos index page' do
   expect(page).to have_content(volunteer_2.years_of_experience)
   end
 
-  # User Story 6
-  it "can see each Zoo listed in order by the most recently created Zoo" do
-    zoo_1 = Zoo.create!(name: "Denver City Zoo",
-                      rank: 3,
-                      state_funding: true,
-                      city: "Denver")
-
-    zoo_2 = Zoo.create!(name: "Austin Zoo",
-                      rank: 10,
-                      state_funding: false,
-                      city: "Austin")
-
-    zoo_3 = Zoo.create!(name: "Memphis Zoo",
-                      rank: 10,
-                      state_funding: false,
-                      city: "Memphis")
-
-    visit "/zoos"
-
-    save_and_open_page
-
-    # Capybara
-    expect("Memphis").to appear_before("Austin", only_text: true)
-
-    expect(page).to have_content(zoo_1.name)
-    expect(page).to have_content(zoo_1.created_at)
-
-    expect(page).to have_content(zoo_2.name)
-    expect(page).to have_content(zoo_2.created_at)
-
-    expect(page).to have_content(zoo_3.name)
-    expect(page).to have_content(zoo_3.created_at)
-  end
+  # # User Story 6
+  # it "can see each Zoo listed in order by the most recently created Zoo" do
+  #   zoo_1 = Zoo.create!(name: "Denver City Zoo",
+  #                     rank: 3,
+  #                     state_funding: true,
+  #                     city: "Denver")
+  #
+  #   zoo_2 = Zoo.create!(name: "Austin Zoo",
+  #                     rank: 10,
+  #                     state_funding: false,
+  #                     city: "Austin")
+  #
+  #   zoo_3 = Zoo.create!(name: "Memphis Zoo",
+  #                     rank: 10,
+  #                     state_funding: false,
+  #                     city: "Memphis")
+  #
+  #   visit "/zoos"
+  #
+  #   save_and_open_page
+  #
+  #   # Capybara
+  #   expect("Memphis").to appear_before("Austin", only_text: true)
+  #
+  #   expect(page).to have_content(zoo_1.name)
+  #   expect(page).to have_content(zoo_1.created_at)
+  #
+  #   expect(page).to have_content(zoo_2.name)
+  #   expect(page).to have_content(zoo_2.created_at)
+  #
+  #   expect(page).to have_content(zoo_3.name)
+  #   expect(page).to have_content(zoo_3.created_at)
+  # end
 
   # User Story 7
   it "can see a count of the number of volunteers at that zoo" do
@@ -137,8 +137,8 @@ RSpec.describe 'the zoos index page' do
     # save_and_open_page
 
     # Zoos index
-    visit '/zoos'
-    page.has_link?(true)
+    # visit '/zoos'
+    # page.has_link?(true)
     # page.click_link("Volunteers")
 
     # Zoos show
@@ -244,9 +244,97 @@ RSpec.describe 'the zoos index page' do
     visit '/zoos/new'
     fill_in("name", with: "Dallas City Zoo")
     fill_in("rank", with: "4")
-    find(:select, "state_funding").send_keys :enter
+    # select("Option", from: "State Funding")
+    # page.has_select?("state_funding", selected: [true, false])
+    # find(:select, "state_funding").send_keys :enter
     # select 'state_funding', from: "state_funding"
     # fill_in("state_funding", with: false)
     fill_in("city", with: "Dallas")
+  end
+
+  # User Story 13
+  it "can link to the create page and create a new volunteer" do
+
+    zoo = Zoo.create!(name: "Denver City Zoo",
+                        rank: 3,
+                        state_funding: true,
+                        city: "Denver")
+
+    volunteer_1 = zoo.volunteers.create!(name: "Karen Dale",
+                                         certified_trainer: true,
+                                         years_of_experience: 4,)
+
+    volunteer_2 = zoo.volunteers.create!(name: "Scott Dale",
+                                         certified_trainer: false,
+                                         years_of_experience: 1,)
+
+    visit "/zoos/#{zoo.id}/volunteers"
+    click_link("Create Volunteer")
+
+    expect(current_path).to eq("/zoos/#{zoo.id}/volunteers/new")
+
+    fill_in("name", with: "Bobby Dale")
+    fill_in("certified_trainer", with: true)
+    fill_in("years_of_experience", with: 8)
+
+    click_button("Create Volunteer")
+
+    expect(current_path).to eq("/zoos/#{zoo.id}/volunteers")
+
+    expect(page).to have_content("Bobby Dale")
+  end
+
+  # User Story 16
+  it "can link to the create page and create a new volunteer" do
+
+    zoo = Zoo.create!(name: "Denver City Zoo",
+                        rank: 3,
+                        state_funding: true,
+                        city: "Denver")
+
+    volunteer_1 = zoo.volunteers.create!(name: "Karen Dale",
+                                         certified_trainer: true,
+                                         years_of_experience: 4,)
+
+    volunteer_2 = zoo.volunteers.create!(name: "Scott Dale",
+                                         certified_trainer: false,
+                                         years_of_experience: 1,)
+
+    volunteer_3 = zoo.volunteers.create!(name: "Adam Dale",
+                                         certified_trainer: false,
+                                         years_of_experience: 1,)
+
+    visit "/zoos/#{zoo.id}/volunteers"
+    page.has_link?(true)
+
+    click_link("Sort Alphabetically")
+
+    expect(current_path).to eq("/zoos/#{zoo.id}/volunteers")
+  end
+
+  # User Story 17
+  it "can visit the Zoo page and select a specific zoo to edit" do
+
+    zoo = Zoo.create!(name: "Denver City Zoo",
+                        rank: 3,
+                        state_funding: true,
+                        city: "Denver")
+
+    volunteer_1 = zoo.volunteers.create!(name: "Karen Dale",
+                                         certified_trainer: true,
+                                         years_of_experience: 4,)
+
+    volunteer_2 = zoo.volunteers.create!(name: "Scott Dale",
+                                         certified_trainer: false,
+                                         years_of_experience: 1,)
+
+    volunteer_3 = zoo.volunteers.create!(name: "Adam Dale",
+                                         certified_trainer: false,
+                                         years_of_experience: 1,)
+
+    visit "/zoos"
+    click_link("Update Zoo")
+
+    expect(current_path).to eq("/zoos/#{zoo.id}/edit")
   end
 end
