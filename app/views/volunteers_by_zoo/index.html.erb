@@ -8,6 +8,7 @@
   <h3>Name: <%= volunteer.name %></h3>
   <p>Certifed Trainer? <%= volunteer.certified_trainer %></p>
   <p>Years of Experience: <%= volunteer.years_of_experience %></p>
+  <%= button_to "Delete Volunteer", "/volunteers/#{volunteer.id}", method: :delete%>
 <% end %>
 
 <%= link_to "Create Volunteer", "/zoos/#{@zoo.id}/volunteers/new" %>
