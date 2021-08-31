@@ -8,5 +8,5 @@
   <h4>Certified? <%= volunteer.certified_trainer %></h4>
   <h4>Years Experience: <%= volunteer.years_of_experience %></h4>
   <p><%= link_to "Update Volunteer", "/volunteers/#{volunteer.id}/edit" %></p><br>
-
+  <%= button_to "Delete Volunteer", "/volunteers/#{volunteer.id}", method: :delete%>
 <% end %>
