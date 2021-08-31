@@ -337,4 +337,28 @@ RSpec.describe 'the zoos index page' do
 
     expect(current_path).to eq("/zoos/#{zoo.id}/edit")
   end
+
+  # User Story 19
+  it "can delete a zoo" do
+
+    zoo_1 = Zoo.create!(name: "Denver City Zoo",
+                        rank: 3,
+                        state_funding: true,
+                        city: "Denver")
+
+    zoo_2 = Zoo.create!(name: "Austin City Zoo",
+                        rank: 4,
+                        state_funding: false,
+                        city: "Austin")
+
+    volunteer_1 = zoo_1.volunteers.create!(name: "Karen Dale",
+                                         certified_trainer: true,
+                                         years_of_experience: 4,)
+
+
+    visit "/zoos/#{zoo_1.id}"
+    click_button("Delete Zoo")
+
+    expect(current_path).to eq("/zoos")
+  end
 end
