@@ -58,10 +58,19 @@ RSpec.describe 'index page' do
                                           roller_coaster: false,
                                           top_speed: 15,)
       visit "/rides"
-      save_and_open_page
       expect(page).to have_content("#{ride.name}")
       expect(page).to have_content("#{ride_2.name}")
       expect(page).not_to have_content("#{ride_3.name}")
+    end
+  end
+  describe 'user story 18' do
+    it "should have link to edit each amusement park record next to the record" do
+      visit "/rides"
+      save_and_open_page
+      page.has_link?("Edit The Beast")
+      page.has_link?("Edit Diamond Back")
+      click_link("Edit Diamond Back")
+      expect(current_path).to eq("/rides/712/edit")
     end
   end
 end

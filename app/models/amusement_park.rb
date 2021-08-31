@@ -1,16 +1,17 @@
 
 class AmusementPark < ApplicationRecord
-  has_many :rides
+  has_many :rides, dependent: :destroy
 
   def self.ordered_parks
     order(created_at: :DESC)
   end
 
   def alpha_rides_by_park(alphabetize = false)
-    if alphabetize 
+    if alphabetize
       rides.order(:name)
     else
       rides
     end
   end
+
 end

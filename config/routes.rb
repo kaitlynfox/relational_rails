@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/amusement_parks', to: 'amusement_parks#create'
   get '/amusement_parks/:id/edit', to: 'amusement_parks#edit'
   patch '/amusement_parks/:id', to: 'amusement_parks#update'
+  delete '/amusement_parks/:id', to: 'amusement_parks#destroy'
 
   # Rides by Amusement Park
   get '/amusement_parks/:id/rides', to: 'rides_by_amusement_park#index'

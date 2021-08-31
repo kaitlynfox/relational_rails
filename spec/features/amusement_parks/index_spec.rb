@@ -35,9 +35,21 @@ RSpec.describe 'Index' do
   describe 'user story 11' do
     it "should have link to create new amusement park record" do
       visit "/amusement_parks"
-      page.has_link?(true)
       page.click_link("New Amusement Park")
       expect(current_path).to eq("/amusement_parks/new")
+    end
+  end
+  describe 'user story 17' do
+    it "should have link to edit each amusement park record next to the record" do
+      # amusement_park = AmusementPark.create!(name: "Walt Disney World",
+      #                                        cost_of_entry: 95,
+      #                                        open_year_round: false,)
+      # amusement_park_2 = AmusementPark.create!(name: "King's Island", cost_of_entry: 45, open_year_round: false)
+      visit "/amusement_parks"
+      page.has_link?("Edit Walt Disney World")
+      page.has_link?("Edit King's Island")
+      click_link("Edit King's Island")
+      expect(current_path).to eq("/amusement_parks/666/edit")
     end
   end
 end

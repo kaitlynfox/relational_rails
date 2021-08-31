@@ -10,7 +10,7 @@ class AmusementParksController < ApplicationController
 
   def new
   end
-  
+
   def create
     new_amusement_park = AmusementPark.create(amusement_park_params)
     redirect_to "/amusement_parks"
@@ -24,6 +24,11 @@ class AmusementParksController < ApplicationController
     amusement_park = AmusementPark.find(params[:id])
     amusement_park.update(amusement_park_params)
     redirect_to "/amusement_parks/#{amusement_park.id}"
+  end
+
+  def destroy
+    AmusementPark.destroy(params[:id])
+    redirect_to '/amusement_parks'
   end
 
   def amusement_park_params
