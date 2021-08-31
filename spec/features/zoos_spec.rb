@@ -137,8 +137,8 @@ RSpec.describe 'the zoos index page' do
     # save_and_open_page
 
     # Zoos index
-    # visit '/zoos'
-    # page.has_link?(true)
+    visit '/zoos'
+    page.has_link?(true)
     # page.click_link("Volunteers")
 
     # Zoos show
@@ -160,6 +160,7 @@ RSpec.describe 'the zoos index page' do
     # visit "/zoos/#{zoo.id}/volunteers"
     # page.has_link?(true)
     # page.click_link("Volunteers")
+    save_and_open_page
   end
 
   # User Story 9
@@ -209,5 +210,43 @@ RSpec.describe 'the zoos index page' do
     # page.click_link("Zoos")
 
     # save_and_open_page
+  end
+
+  # User Story 10
+  it "can see a link on the zoo's page that takes you to the zoo's volunteers" do
+
+    zoo = Zoo.create!(name: "Denver City Zoo",
+                        rank: 3,
+                        state_funding: true,
+                        city: "Denver")
+
+    volunteer_1 = zoo.volunteers.create!(name: "Karen Dale",
+                                         certified_trainer: true,
+                                         years_of_experience: 4,)
+
+    volunteer_2 = zoo.volunteers.create!(name: "Scott Dale",
+                                         certified_trainer: false,
+                                         years_of_experience: 1,)
+
+    visit "/zoos/#{zoo.id}"
+    page.has_link?(true)
+
+    expect(page).to have_link("See this zoo's volunteers here.")
+  end
+
+  # User Story 11
+  it "can link to the new page from the zoo index" do
+    visit '/zoos'
+    click_link("New Zoo")
+
+    expect(current_path).to eq('/zoos/new')
+
+    visit '/zoos/new'
+    fill_in("name", with: "Dallas City Zoo")
+    fill_in("rank", with: "4")
+    find(:select, "state_funding").send_keys :enter
+    # select 'state_funding', from: "state_funding"
+    # fill_in("state_funding", with: false)
+    fill_in("city", with: "Dallas")
   end
 end

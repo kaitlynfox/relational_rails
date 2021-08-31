@@ -6,3 +6,5 @@
 <% @zoos.each do |zoo| %>
   <p>Zoo: <%= zoo.name %> - <%= zoo.created_at %>
 <% end %>
+
+<p><%= link_to "New Zoo", '/zoos/new' %></p>

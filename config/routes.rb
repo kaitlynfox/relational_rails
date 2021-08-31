@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   # Zoo
   get '/zoos', to: 'zoos#index'
+  get '/zoos/new', to: 'zoos#new'
   get '/zoos/:id', to: 'zoos#show'
+  post '/zoos', to: 'zoos#create'
 
   # VolunteersByZoo
   get '/zoos/:id/volunteers', to: 'volunteers_by_zoo#index'

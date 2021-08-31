@@ -18,7 +18,7 @@ RSpec.describe 'the volunteers index page' do
 
     visit '/volunteers'
 
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content(volunteer.name)
     expect(page).to have_content(volunteer.certified_trainer)
@@ -38,7 +38,7 @@ RSpec.describe 'the volunteers index page' do
 
     visit "/volunteers/#{volunteer.id}"
 
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content(volunteer.name)
     expect(page).to have_content(volunteer.certified_trainer)

@@ -1,0 +1,11 @@
+<%= form_with  url: '/zoos', method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br><br>
+  <%= form.label :rank %>
+  <%= form.text_field :rank %><br><br>
+  <%= form.label :state_funding %>
+  <%= form.select :state_funding, [[true], [false]] %><br><br>
+  <%= form.label :city %>
+  <%= form.text_field :city %><br><br>
+  <%= form.submit "Create Zoo" %>
+<% end %>
