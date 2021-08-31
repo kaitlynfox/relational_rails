@@ -1,0 +1,13 @@
+<h3> Make a new Ride </h3>
+
+
+<%= form_with url: "/amusement_parks/#{@amusement_park.id}/rides", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br><br>
+  <%= form.label :top_speed %>
+  <%= form.text_field :top_speed %><br><br>
+  <%= form.label :roller_coaster, "Check box if the ride is a roller coaster:" %>
+  <%= form.check_box :roller_coaster %><br><br>
+
+  <%= form.submit "Create Ride" %>
+<% end %>
