@@ -253,9 +253,10 @@
           1,
           1,
           1,
+          null,
+          null,
           1,
-          null,
-          null,
+          1,
           1,
           null,
           null,
@@ -285,7 +286,7 @@
           1,
           null,
           1,
-          0,
+          1,
           null,
           null,
           null
@@ -305,35 +306,16 @@
           null
         ]
       },
-      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/controllers/amusement_parks_controller.rb": {
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/controllers/rides_controller.rb": {
         "lines": [
           1,
           null,
           1,
-          0,
+          7,
           null,
           null,
           1,
           2,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
           null,
           null
         ]
@@ -343,8 +325,69 @@
           1,
           null
         ]
+      },
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/controllers/amusement_parks_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/kelseythompson/turing/mod_2/relational_rails/relational_rails/app/controllers/rides_by_amusement_park_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          3,
+          3,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1630360832
+    "timestamp": 1630365674
   }
 }

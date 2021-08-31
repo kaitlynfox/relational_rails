@@ -8,6 +8,9 @@ class AmusementParksController < ApplicationController
     @amusement_park = AmusementPark.find(params[:id])
   end
 
+  def new
+  end
+  
   def create
     new_amusement_park = AmusementPark.create(amusement_park_params)
     redirect_to "/amusement_parks"
