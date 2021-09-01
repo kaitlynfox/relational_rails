@@ -6,6 +6,9 @@
 <h3>City: <%= @zoo.city %></h3>
 <h3>Rank: <%= @zoo.rank %></h3>
 <h3>Receives State Funding: <%= @zoo.state_funding %></h3>
+<h3><p>ID: <%= @zoo.id %></p></h3>
+<h3><p>Created on: <%= @zoo.created_at %></p></h3>
+<h3><p>Updated on: <%= @zoo.updated_at %></p></h3>
 <h3>Number of Volunteers: <%= @zoo.volunteers.count %></h3>
 <h3><%= link_to "See this zoo's volunteers here.", "/zoos/#{@zoo.id}/volunteers" %></h3><br>
 
