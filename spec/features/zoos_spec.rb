@@ -56,40 +56,6 @@ RSpec.describe 'the zoos index page' do
   expect(page).to have_content(volunteer_2.years_of_experience)
   end
 
-  # # User Story 6
-  # it "can see each Zoo listed in order by the most recently created Zoo" do
-  #   zoo_1 = Zoo.create!(name: "Denver City Zoo",
-  #                     rank: 3,
-  #                     state_funding: true,
-  #                     city: "Denver")
-  #
-  #   zoo_2 = Zoo.create!(name: "Austin Zoo",
-  #                     rank: 10,
-  #                     state_funding: false,
-  #                     city: "Austin")
-  #
-  #   zoo_3 = Zoo.create!(name: "Memphis Zoo",
-  #                     rank: 10,
-  #                     state_funding: false,
-  #                     city: "Memphis")
-  #
-  #   visit "/zoos"
-  #
-  #   save_and_open_page
-  #
-  #   # Capybara
-  #   expect("Memphis").to appear_before("Austin", only_text: true)
-  #
-  #   expect(page).to have_content(zoo_1.name)
-  #   expect(page).to have_content(zoo_1.created_at)
-  #
-  #   expect(page).to have_content(zoo_2.name)
-  #   expect(page).to have_content(zoo_2.created_at)
-  #
-  #   expect(page).to have_content(zoo_3.name)
-  #   expect(page).to have_content(zoo_3.created_at)
-  # end
-
   # User Story 7
   it "can see a count of the number of volunteers at that zoo" do
 
@@ -142,7 +108,7 @@ RSpec.describe 'the zoos index page' do
     expect(current_path).to eq('/volunteers')
 
     # volunteer/edit
-    visit "/volunteers/#{volunteer.id}/edit"
+    visit "/volunteers/#{volunteer_1.id}/edit"
     page.has_link?("Volunteers")
     page.click_link("Volunteers")
     expect(current_path).to eq('/volunteers')
@@ -218,7 +184,7 @@ RSpec.describe 'the zoos index page' do
     expect(current_path).to eq('/zoos')
 
     # Volunteers/edit
-    visit "/volunteers/#{volunteer.id}/edit"
+    visit "/volunteers/#{volunteer_1.id}/edit"
     page.has_link?("Zoos")
     page.click_link("Zoos")
     expect(current_path).to eq('/zoos')
