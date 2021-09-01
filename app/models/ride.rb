@@ -6,7 +6,7 @@ class Ride < ApplicationRecord
   end
 
   def self.fast_rides(num)
-    num = 0 if num == nil
+    num = 0 if num == nil || num == ""
     where("top_speed > #{num}")
   end
 end
