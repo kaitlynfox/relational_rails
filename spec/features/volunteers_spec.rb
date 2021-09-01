@@ -18,14 +18,15 @@ RSpec.describe 'the volunteers index page' do
 
     visit '/volunteers'
 
-    # save_and_open_page
-
     expect(page).to have_content(volunteer.name)
     expect(page).to have_content(volunteer.certified_trainer)
     expect(page).to have_content(volunteer.years_of_experience)
+    expect(page).to have_content(volunteer.id)
+    expect(page).to have_content(volunteer.created_at)
+    expect(page).to have_content(volunteer.updated_at)
   end
 
-  it "can see all amusement park names and its attributes" do
+  it "can see all volunteer names and its attributes" do
     zoo = Zoo.create!(name: "Denver City Zoo",
                       rank: 3,
                       state_funding: true,
@@ -38,15 +39,16 @@ RSpec.describe 'the volunteers index page' do
 
     visit "/volunteers/#{volunteer.id}"
 
-    # save_and_open_page
-
     expect(page).to have_content(volunteer.name)
     expect(page).to have_content(volunteer.certified_trainer)
     expect(page).to have_content(volunteer.years_of_experience)
+    expect(page).to have_content(volunteer.id)
+    expect(page).to have_content(volunteer.created_at)
+    expect(page).to have_content(volunteer.updated_at)
   end
 
   # User Story 14
-  it "can see all amusement park names and its attributes" do
+  it "can see all volunteer names and its attributes" do
     zoo = Zoo.create!(name: "Denver City Zoo",
                       rank: 3,
                       state_funding: true,
