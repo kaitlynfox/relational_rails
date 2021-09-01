@@ -15,6 +15,9 @@ RSpec.describe 'index page' do
       expect(page).to have_content(ride.name)
       expect(page).to have_content(ride.roller_coaster)
       expect(page).to have_content(ride.top_speed)
+      expect(page).to have_content(ride.id)
+      expect(page).to have_content(ride.created_at)
+      expect(page).to have_content(ride.updated_at)
 
     end
   end
