@@ -1,0 +1,9 @@
+<%= form_with url: "/zoos/#{@zoo.id}/volunteers", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :certified_trainer %>
+  <%= form.text_field :certified_trainer %>
+  <%= form.label :years_of_experience %>
+  <%= form.text_field :years_of_experience %>
+  <%= form.submit "Create Volunteer" %>
+<% end %>

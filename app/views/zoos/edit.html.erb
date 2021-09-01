@@ -1,0 +1,11 @@
+<%= form_with url: "/zoos/#{@zoo.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :rank %>
+  <%= form.text_field :rank %>
+  <%= form.label :state_funding %>
+  <%= form.text_field :state_funding %>
+  <%= form.label :city %>
+  <%= form.text_field :city %>
+  <%= form.submit "Update Zoo" %>
+<% end %>

@@ -1,5 +1,10 @@
+<%= link_to 'Zoos', '/zoos' %>
+<%= link_to 'Volunteers', '/volunteers' %>
+
 <h1>Zoos</h1>
 
 <% @zoos.each do |zoo| %>
-  <%= zoo.name %>
+  <p>Zoo: <%= zoo.name %> - <%= zoo.created_at %> <%= link_to "Update Zoo", "/zoos/#{zoo.id}/edit" %>
 <% end %>
+
+<p><%= link_to "New Zoo", '/zoos/new' %></p>

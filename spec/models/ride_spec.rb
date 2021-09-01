@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Ride do
+RSpec.describe Ride do
   it {should belong_to :amusement_park}
 
 
