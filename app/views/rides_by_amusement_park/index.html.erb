@@ -7,6 +7,16 @@
 
 <% @rides_by_amusement_park.each do |ride|%>
   <h3><%= ride.name %></h3>
-  <h4>Is it a roller coaster? <%= ride.roller_coaster %></h4>
-  <h4>Top Speed: <%= ride.top_speed %>MPH</h4>
+  <p>Is it a roller coaster? <%= ride.roller_coaster %></p>
+  <p>Top Speed: <%= ride.top_speed %>MPH</p>
+  <p>Ride ID: <%= ride.id %></p>
+  <p>Created on: <%= ride.created_at %></p>
+  <p>Updated on: <%= ride.updated_at %></p>
+
+<% end %>
+
+<%= form_with url: "/amusement_parks/#{@amusement_park.id}/rides", method: :get, local: true do |form| %>
+  <%= form.label :top_speed %>
+  <%= form.number_field :top_speed %><br><br>
+  <%= form.submit "Submit" %>
 <% end %>

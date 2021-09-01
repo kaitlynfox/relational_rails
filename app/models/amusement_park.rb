@@ -13,5 +13,4 @@ class AmusementPark < ApplicationRecord
       rides
     end
   end
-
 end

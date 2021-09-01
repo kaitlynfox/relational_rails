@@ -78,8 +78,38 @@ RSpec.describe 'index page' do
       visit "/amusement_parks/#{amusement_park_2.id}/rides"
       click_link("Alphabetize Rides")
       # expect(current_path).to eq("/amusement_parks/#{amusement_park_2.id}/rides")
-      
+
       expect(ride_2.name).to appear_before(ride.name)
+
+    end
+  end
+  describe 'user story 21' do
+    it 'lists only rides by amusement park that have a higher top speed than the user inputted data' do
+      amusement_park = AmusementPark.create!(name: "Walt Disney World",
+                                            cost_of_entry: 95,
+                                            open_year_round: true,)
+      amusement_park_2 = AmusementPark.create!(name: "King's Island", cost_of_entry: 45, open_year_round: false)
+
+      ride = amusement_park_2.rides.create!(name: "The Beast",
+                                          roller_coaster: true,
+                                          top_speed: 55,)
+      ride_2 = amusement_park_2.rides.create!(name: "Diamond Back",
+                                          roller_coaster: true,
+                                          top_speed: 100,)
+      ride_3 = amusement_park.rides.create!(name: "Dumbo",
+                                          roller_coaster: false,
+                                          top_speed: 15,)
+      ride_4 = amusement_park.rides.create!(name: "Rock n Roller Coaster",
+                                          roller_coaster: false,
+                                          top_speed: 66,)
+      visit "/amusement_parks/#{amusement_park_2.id}/rides"
+      fill_in :top_speed, with: 65
+      click_button "Submit"
+      save_and_open_page
+      expect(page).to have_content(ride_2.name)
+      expect(page).not_to have_content(ride.name)
+      expect(page).not_to have_content(ride_3.name)
+      expect(page).not_to have_content(ride_4.name)
 
     end
   end
