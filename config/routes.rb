@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   post '/zoos', to: 'zoos#create'
   get '/zoos/:id/edit', to: 'zoos#edit'
   patch '/zoos/:id', to: 'zoos#update'
+  delete '/zoos/:id', to: 'zoos#destroy'
 
   # VolunteersByZoo
   get '/zoos/:id/volunteers', to: 'volunteers_by_zoo#index'
@@ -43,6 +44,6 @@ Rails.application.routes.draw do
   get '/volunteers/:id', to: 'volunteers#show'
   get '/volunteers/:id/edit', to: 'volunteers#edit'
   patch '/volunteers/:id', to: 'volunteers#update'
-
+  delete 'volunteers/:id', to: 'volunteers#destroy'
 
 end

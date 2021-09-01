@@ -1,3 +1,6 @@
+<%= link_to 'Zoos', '/zoos' %>
+<%= link_to 'Volunteers', '/volunteers' %>
+
 <%= form_with url: "/zoos/#{@zoo.id}/volunteers", method: :post, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>

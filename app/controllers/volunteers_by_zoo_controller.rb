@@ -2,10 +2,8 @@ class VolunteersByZooController < ApplicationController
 
   def index
     @zoo = Zoo.find(params[:id])
-
-    # volunteers must be associated with this specific zoo
-    # THEN we order those volunteers
-    @volunteers = @zoo.volunteers.order(params[:sort])
+    # years = params[:years_of_experience]
+    @volunteers = @zoo.volunteers.order(params[:sort]).experienced(params[:years_of_experience])
   end
 
   def new

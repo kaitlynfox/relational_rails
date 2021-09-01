@@ -1,6 +1,13 @@
 <%= link_to "Zoos", '/zoos' %>
 <%= link_to "Volunteers", '/volunteers' %>
 
+
+<%= form_with url: "/zoos/#{@zoo.id}/volunteers", method: :get, local: true do |form| %>
+  <%= form.label :years_of_experience %>
+  <%= form.number_field :years_of_experience %>
+  <%= form.submit "Only return volunteers that have more than this many years experience" %>
+<% end %>
+
 <h1><%= @zoo.name %></h1>
 
 <h2>Volunteers</h2>
@@ -8,6 +15,7 @@
   <h3>Name: <%= volunteer.name %></h3>
   <p>Certifed Trainer? <%= volunteer.certified_trainer %></p>
   <p>Years of Experience: <%= volunteer.years_of_experience %></p>
+  <%= button_to "Delete Volunteer", "/volunteers/#{volunteer.id}", method: :delete%>
 <% end %>
 
 <%= link_to "Create Volunteer", "/zoos/#{@zoo.id}/volunteers/new" %>

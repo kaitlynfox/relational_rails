@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+Zoo.destroy_all
+Volunteer.destroy_all
+
 AmusementPark.destroy_all
 Ride.destroy_all
 
@@ -26,6 +30,7 @@ ride_3 = amusement_park.rides.create!(name: "Dumbo",
 ride_4 = amusement_park.rides.create!(name: "Rock n Roller Coaster",
                                     roller_coaster: false,
                                     top_speed: 66,)
+
 
 
 # Zoos

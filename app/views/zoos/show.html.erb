@@ -10,3 +10,4 @@
 <h3><%= link_to "See this zoo's volunteers here.", "/zoos/#{@zoo.id}/volunteers" %></h3><br>
 
 <h3><%= link_to "Update Zoo", "/zoos/#{@zoo.id}/edit" %></h3><br>
+<%= button_to "Delete Zoo", "/zoos/#{@zoo.id}", method: :delete%>
