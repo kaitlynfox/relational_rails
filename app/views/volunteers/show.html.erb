@@ -3,8 +3,11 @@
 
 <h1><%= @volunteer.name %></h1>
 
-<h3>Certified Trainer? <%= @volunteer.certified_trainer %></h3>
-<h3>Years of Experience: <%= @volunteer.years_of_experience %></h3>
+<h4>Certified Trainer? <%= @volunteer.certified_trainer %></h4>
+<h4>Years of Experience: <%= @volunteer.years_of_experience %></h4>
+<h4><p>ID: <%= @volunteer.id %></p></h4>
+<h4><p>Created on: <%= @volunteer.created_at %></p></h4>
+<h4><p>Updated on: <%= @volunteer.updated_at %></p></h4>
 
 <p><%= link_to "Update Volunteer", "/volunteers/#{@volunteer.id}/edit" %></p><br>
 <%= button_to "Delete Volunteer", "/volunteers/#{@volunteer.id}", method: :delete%>
