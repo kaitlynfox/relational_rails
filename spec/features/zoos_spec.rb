@@ -142,7 +142,7 @@ RSpec.describe 'the zoos index page' do
     expect(current_path).to eq('/volunteers')
 
     # volunteer/edit
-    visit "/volunteers/#{volunteer.id}/edit"
+    visit "/volunteers/#{volunteer_1.id}/edit"
     page.has_link?("Volunteers")
     page.click_link("Volunteers")
     expect(current_path).to eq('/volunteers')
@@ -218,7 +218,7 @@ RSpec.describe 'the zoos index page' do
     expect(current_path).to eq('/zoos')
 
     # Volunteers/edit
-    visit "/volunteers/#{volunteer.id}/edit"
+    visit "/volunteers/#{volunteer_1.id}/edit"
     page.has_link?("Zoos")
     page.click_link("Zoos")
     expect(current_path).to eq('/zoos')
