@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Ride do
+RSpec.describe Ride do
   it {should belong_to :amusement_park}
 
 
@@ -25,6 +25,6 @@ describe Ride do
         expect(Ride.true_rides).to eq([ride, ride_2])
       end
     end
-  
+
   end
 end
