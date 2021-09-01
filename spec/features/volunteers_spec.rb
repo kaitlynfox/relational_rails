@@ -133,6 +133,28 @@ RSpec.describe 'the volunteers index page' do
     page.has_button?("Delete Volunteer")
   end
 
+  # User Story 21
+  it "can list volunteers that have years experience greater than the user input" do
+    zoo = Zoo.create!(name: "Denver City Zoo",
+                      rank: 3,
+                      state_funding: true,
+                      city: "Denver")
+
+    volunteer_1 = zoo.volunteers.create!(name: "Karen Dale",
+                                  certified_trainer: false,
+                                  years_of_experience: 2)
+
+    volunteer_2 = zoo.volunteers.create!(name: "Tommy Dale",
+                                  certified_trainer: true,
+                                  years_of_experience: 4)
+
+    visit "/zoos/#{zoo.id}/volunteers"
+    fill_in(:years_of_experience, with: 3)
+    click_button("Only return volunteers that have more than this many years experience")
+    expect(page).to have_content(volunteer_2.name)
+    expect(page).not_to have_content(volunteer_1.name)
+  end
+
   # User Story 22
   it "can delete a zoo from the zoos main page" do
     zoo = Zoo.create!(name: "Denver City Zoo",
@@ -155,7 +177,7 @@ RSpec.describe 'the volunteers index page' do
                       rank: 3,
                       state_funding: true,
                       city: "Denver")
-                      
+
     volunteer = Volunteer.create!(name: "Karen Dale",
                                   certified_trainer: true,
                                   years_of_experience: 4,
