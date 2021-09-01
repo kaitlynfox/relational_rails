@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Zoo.destroy_all
+Volunteer.destroy_all
+
 # Zoos
 denver_zoo = Zoo.create!(name: "Denver City Zoo",
                     rank: 1,
