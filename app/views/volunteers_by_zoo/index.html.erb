@@ -15,6 +15,9 @@
   <h3>Name: <%= volunteer.name %></h3>
   <p>Certifed Trainer? <%= volunteer.certified_trainer %></p>
   <p>Years of Experience: <%= volunteer.years_of_experience %></p>
+  <p>ID: <%= volunteer.id %></p>
+  <p>Created on: <%= volunteer.created_at %></p>
+  <p>Updated on: <%= volunteer.updated_at %></p>
   <%= button_to "Delete Volunteer", "/volunteers/#{volunteer.id}", method: :delete%>
 <% end %>
 
