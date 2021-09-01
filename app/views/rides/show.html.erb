@@ -5,5 +5,8 @@
 <h1><%= @ride.name %></h1>
 <%= link_to "Edit Ride", "/rides/#{@ride.id}/edit" %>
 <%= link_to "Delete Ride", "/rides/#{@ride.id}", method: :delete %>
-<h3>Top speed: <%= @ride.top_speed %>mph</h3>
-<h3>Is it a roller coaster? <%= @ride.roller_coaster %></h3>
+<p>Is it a roller coaster? <%= @ride.roller_coaster %></p>
+<p>Top Speed: <%= @ride.top_speed %>MPH</p>
+<p>Ride ID: <%= @ride.id %></p>
+<p>Created on: <%= @ride.created_at %></p>
+<p>Updated on: <%= @ride.updated_at %></p>

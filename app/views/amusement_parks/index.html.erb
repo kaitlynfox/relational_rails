@@ -5,6 +5,8 @@
 
 <% @amusement_parks.each do |amusement_park|%>
   <h3><%= amusement_park.name %></h3>
-  <h2><%= amusement_park.created_at %></h2>
+  <h5>Created on: <%= amusement_park.created_at %></h5>
   <p><%= link_to "Edit #{amusement_park.name}", "/amusement_parks/#{amusement_park.id}/edit" %></p>
+  <p> <%= link_to "Delete #{amusement_park.name}", "/amusement_parks/#{amusement_park.id}", method: :delete %> </p>
+
 <% end %>
