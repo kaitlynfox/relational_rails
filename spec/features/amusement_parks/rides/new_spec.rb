@@ -1,6 +1,28 @@
 require 'rails_helper'
 
 RSpec.describe 'New page' do
+  describe 'user story 8' do
+    it "should have link to Rides index " do
+      amusement_park = AmusementPark.create!(name: "Walt Disney World",
+                                             cost_of_entry: 95,
+                                             open_year_round: true,)
+
+      visit "/amusement_parks/#{amusement_park.id}/rides/new"
+      page.click_link("Rides")
+      expect(current_path).to eq('/rides')
+    end
+  end
+  describe 'user story 9' do
+    it "should have link to amusement parks index" do
+      amusement_park = AmusementPark.create!(name: "Walt Disney World",
+                                             cost_of_entry: 95,
+                                             open_year_round: true,)
+
+      visit "/amusement_parks/#{amusement_park.id}/rides/new"
+      page.click_link("Amusement Parks")
+      expect(current_path).to eq('/amusement_parks')
+    end
+  end
   describe "user story 13" do
     it "can create a new record for ride by amusement park" do
       amusement_park = AmusementPark.create!(name: "Walt Disney World",

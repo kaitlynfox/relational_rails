@@ -3,7 +3,8 @@ class RidesByAmusementParkController < ApplicationController
   def index
     # binding.pry
     @amusement_park = AmusementPark.find(params[:id])
-    @rides_by_amusement_park =  @amusement_park.alpha_rides_by_park(params[:alphabetize])
+    speed = params[:top_speed]
+    @rides_by_amusement_park =  @amusement_park.alpha_rides_by_park(params[:alphabetize]).fast_rides(speed)
 
   end
 
