@@ -129,38 +129,58 @@ RSpec.describe 'the zoos index page' do
                                          certified_trainer: false,
                                          years_of_experience: 1,)
 
-    # Welcome index
-    # visit "/"
-    # page.has_link?(true)
-    # page.click_link("Volunteers")
+    # Zoos/New
+    visit "/zoos/new"
+    page.has_link?("Volunteers")
+    page.click_link("Volunteers")
+    expect(current_path).to eq('/volunteers')
 
-    # save_and_open_page
+    # Zoos/edit
+    visit "/zoos/#{zoo.id}/edit"
+    page.has_link?("Volunteers")
+    page.click_link("Volunteers")
+    expect(current_path).to eq('/volunteers')
+
+    # volunteer/edit
+    visit "/volunteers/#{volunteer.id}/edit"
+    page.has_link?("Volunteers")
+    page.click_link("Volunteers")
+    expect(current_path).to eq('/volunteers')
+
+    # volunteer_by_zoos/new
+    visit "/zoos/#{zoo.id}/volunteers/new"
+    page.has_link?("Volunteers")
+    page.click_link("Volunteers")
+    expect(current_path).to eq('/volunteers')
 
     # Zoos index
-    # visit '/zoos'
-    # page.has_link?(true)
-    # page.click_link("Volunteers")
+    visit '/zoos'
+    page.has_link?("Volunteers")
+    page.click_link("Volunteers")
+    expect(current_path).to eq('/volunteers')
 
     # Zoos show
-    # visit "/zoos/#{zoo.id}"
-    # page.has_link?(true)
-    # page.click_link("Volunteers")
+    visit "/zoos/#{zoo.id}"
+    page.has_link?("Volunteers")
+    page.click_link("Volunteers")
+    expect(current_path).to eq('/volunteers')
 
     # Volunteers index
-    # visit '/volunteers'
-    # page.has_link?(true)
-    # page.click_link("Volunteers")
+    visit '/volunteers'
+    page.has_link?("Volunteers")
+    page.click_link("Volunteers")
+    expect(current_path).to eq('/volunteers')
 
     # Volunteers show
-    # visit "/volunteers/#{volunteer_1.id}"
-    # page.has_link?(true)
-    # page.click_link("Volunteers")
+    visit "/volunteers/#{volunteer_1.id}"
+    page.has_link?("Volunteers")
+    page.click_link("Volunteers")
+    expect(current_path).to eq('/volunteers')
 
     # Volunteers by Zoo
-    # visit "/zoos/#{zoo.id}/volunteers"
-    # page.has_link?(true)
-    # page.click_link("Volunteers")
-    save_and_open_page
+    page.has_link?("Volunteers")
+    page.click_link("Volunteers")
+    expect(current_path).to eq('/volunteers')
   end
 
   # User Story 9
@@ -179,37 +199,59 @@ RSpec.describe 'the zoos index page' do
                                          certified_trainer: false,
                                          years_of_experience: 1,)
 
-    # Welcome index
-    # visit "/"
-    # page.has_link?(true)
-    # page.click_link("Zoos")
-
     # Zoos index
-    # visit '/zoos'
-    # page.has_link?(true)
-    # page.click_link("Zoos")
+    visit '/zoos'
+    page.has_link?("Zoos")
+    page.click_link("Zoos")
+    expect(current_path).to eq('/zoos')
+
+    # Zoos/edit
+    visit "/zoos/#{zoo.id}/edit"
+    page.has_link?("Zoos")
+    page.click_link("Zoos")
+    expect(current_path).to eq('/zoos')
+
+    # Zoos/new
+    visit "/zoos/new"
+    page.has_link?("Zoos")
+    page.click_link("Zoos")
+    expect(current_path).to eq('/zoos')
+
+    # Volunteers/edit
+    visit "/volunteers/#{volunteer.id}/edit"
+    page.has_link?("Zoos")
+    page.click_link("Zoos")
+    expect(current_path).to eq('/zoos')
+
+    # volunteers_by_zoo/new
+    visit "/zoos/#{zoo.id}/volunteers/new"
+    page.has_link?("Zoos")
+    page.click_link("Zoos")
+    expect(current_path).to eq('/zoos')
 
     # Zoos show
-    # visit "/zoos/#{zoo.id}"
-    # page.has_link?(true)
-    # page.click_link("Zoos")
+    visit "/zoos/#{zoo.id}"
+    page.has_link?("Zoos")
+    page.click_link("Zoos")
+    expect(current_path).to eq('/zoos')
 
     # Volunteers index
-    # visit '/volunteers'
-    # page.has_link?(true)
-    # page.click_link("Zoos")
+    visit '/volunteers'
+    page.has_link?("Zoos")
+    page.click_link("Zoos")
+    expect(current_path).to eq('/zoos')
 
     # Volunteers show
-    # visit "/volunteers/#{volunteer_1.id}"
-    # page.has_link?(true)
-    # page.click_link("Zoos")
+    visit "/volunteers/#{volunteer_1.id}"
+    page.has_link?("Zoos")
+    page.click_link("Zoos")
+    expect(current_path).to eq('/zoos')
 
     # Volunteers by Zoo
-    # visit "/zoos/#{zoo.id}/volunteers"
-    # page.has_link?(true)
-    # page.click_link("Zoos")
-
-    # save_and_open_page
+    visit "/zoos/#{zoo.id}/volunteers"
+    page.has_link?("Zoos")
+    page.click_link("Zoos")
+    expect(current_path).to eq('/zoos')
   end
 
   # User Story 10
