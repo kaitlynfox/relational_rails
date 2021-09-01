@@ -24,6 +24,9 @@ RSpec.describe 'Show page' do
       expect(page).to have_content(amusement_park.name)
       expect(page).to have_content(amusement_park.cost_of_entry)
       expect(page).to have_content(amusement_park.open_year_round)
+      expect(page).to have_content(amusement_park.id)
+      expect(page).to have_content(amusement_park.created_at)
+      expect(page).to have_content(amusement_park.updated_at)
       expect(page).to have_content(amusement_park.rides.count)
     end
   end
