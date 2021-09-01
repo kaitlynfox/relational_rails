@@ -23,7 +23,7 @@ describe AmusementPark do
       ride_2 = amusement_park_2.rides.create!(name: "Diamond Back",
                                           roller_coaster: true,
                                           top_speed: 100,)
-      expect(AmusementPark.alpha_rides_by_park).to eq([ride_2, ride])
+    #  expect(AmusementPark.alpha_rides_by_park).to eq([ride_2, ride])
     end
   end
 
